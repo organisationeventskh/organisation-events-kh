@@ -1,0 +1,62 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Events from './pages/Events';
+import Tickets from './pages/Tickets';
+import Gallery from './pages/Gallery';
+import Contact from './pages/Contact';
+import Booking from './pages/Booking';
+import Partners from './pages/Partners';
+import Testimonials from './pages/Testimonials';
+import Blog from './pages/Blog';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import LanguageSwitcher from './components/LanguageSwitcher';
+import LiveChat from './components/LiveChat';
+import EventMap from './components/EventMap';
+
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <LanguageSwitcher />
+      <div className="bg-gradient-to-r from-purple-600 to-blue-500 text-white py-20 text-center animate-fadeIn">
+        <h1 className="text-7xl font-extrabold drop-shadow-lg">🌎 Organisation Events KH 🎉</h1>
+        <p className="text-xl mt-6 max-w-3xl mx-auto leading-relaxed">
+          La plateforme mondiale pour les événements musicaux, humoristiques et festifs. 
+          Réservez vos billets, découvrez des spectacles live et connectez-vous avec les meilleurs artistes !
+        </p>
+        <div className="flex justify-center mt-8 animate-bounce">
+          <img src="/image.png" alt="Organisation Events KH" className="w-3/4 max-w-3xl rounded-lg shadow-2xl border-4 border-white" />
+        </div>
+        <div className="mt-8 flex justify-center space-x-6">
+          <button className="bg-blue-600 px-8 py-4 text-lg rounded-xl text-white font-bold hover:bg-blue-800 transition">Réserver un billet</button>
+          <button className="bg-red-600 px-8 py-4 text-lg rounded-xl text-white font-bold hover:bg-red-800 transition">Regarder en live</button>
+        </div>
+        <div className="mt-12 text-lg max-w-4xl mx-auto leading-relaxed">
+          <p className="mb-4">🎶 Découvrez nos événements exclusifs avec des DJ de renommée mondiale et des humoristes exceptionnels.</p>
+          <p className="mb-4">🍾 Profitez d'une ambiance de fête avec une sélection des meilleurs bars et clubs.</p>
+          <p className="mb-4">📸 Revivez vos soirées avec notre galerie photo et vidéo.</p>
+          <p className="mb-4">🎟️ Réservez vos billets en quelques clics et ne manquez aucun événement !</p>
+        </div>
+      </div>
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/tickets" element={<Tickets />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/partners" element={<Partners />} />
+        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/blog" element={<Blog />} />
+      </Routes>
+      
+      <LiveChat aiEnabled={true} />
+      <EventMap />
+      <Footer />
+    </Router>
+  );
+}
+
+export default App;
